@@ -1,8 +1,3 @@
-Here’s a **`README.md`** for your AWS Lambda + TypeScript + MongoDB CRUD API project.
-I’ll keep it clean, beginner-friendly, and GitHub-ready so anyone can follow along from clone to deploy.
-
----
-
 ```markdown
 # AWS Lambda + TypeScript + MongoDB CRUD API
 
@@ -27,8 +22,6 @@ This project demonstrates how to create, read, update, and delete data in MongoD
 
 ## 📂 Project Structure
 ```
-
-.
 ├── src/
 │   ├── lib/
 │   │   └── mongo.ts          # MongoDB connection helper
@@ -43,9 +36,7 @@ This project demonstrates how to create, read, update, and delete data in MongoD
 ├── package.json
 └── README.md
 
-````
-
----
+```
 
 ## 🛠 Prerequisites
 
@@ -175,17 +166,3 @@ curl https://<your-endpoint>/items
   ```
 
 ---
-
-## 📜 License
-
-This project is licensed under the MIT License.
-
-```
-
----
-
-If you want, I can **add code snippets for all CRUD handlers** inside this README so that it’s a **self-contained tutorial repo**.  
-That way, your GitHub repo will be directly usable by anyone cloning it.  
-
-Do you want me to add that full code to the README?
-```
