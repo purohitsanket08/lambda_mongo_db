@@ -1,0 +1,28 @@
+Project Strcture
+
+├─ src/
+│  ├─ lib/
+│  │  └─ mongo.ts
+│  └─ functions/
+│     ├─ createItem.ts
+│     ├─ listItems.ts
+│     ├─ getItem.ts
+│     ├─ updateItem.ts
+│     └─ deleteItem.ts
+├─ tsconfig.json
+├─ package.json
+└─ serverless.yml
+
+
+Setup
+mkdir lambda-mongo-ts
+cd lambda-mongo-ts
+npm init -y
+
+# Install runtime deps
+npm i mongodb
+
+# Dev deps
+npm i -D typescript @types/node @types/aws-lambda serverless serverless-esbuild serverless-offline
+# (optional) install serverless globally
+npm i -g serverless

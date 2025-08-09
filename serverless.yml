@@ -1,0 +1,53 @@
+service: lambda-mongo-ts
+frameworkVersion: '4'  # or latest version
+plugins:
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs18.x     # or nodejs20.x / nodejs22.x (pick what's supported in your region)
+  region: us-east-1
+  environment:
+    MONGODB_DB: AWS_Lambda
+    MONGODB_URI: ${env:MONGODB_URI}   # quick dev option: set locally (not secure)
+
+functions:
+  create:
+    handler: src/functions/createItem.handler
+    timeout: 30
+    events:
+      - httpApi:
+          path: /items
+          method: POST
+  list:
+    handler: src/functions/listItems.handler
+    timeout: 30
+    events:
+      - httpApi:
+          path: /items
+          method: GET
+  get:
+    handler: src/functions/getItem.handler
+    timeout: 30
+    events:
+      - httpApi:
+          path: /items/{id}
+          method: GET
+  update:
+    handler: src/functions/updateItem.handler
+    timeout: 30
+    events:
+      - httpApi:
+          path: /items/{id}
+          method: PUT
+  delete:
+    handler: src/functions/deleteItem.handler
+    timeout: 30
+    events:
+      - httpApi:
+          path: /items/{id}
+          method: DELETE
+
+package:
+  individually: true
+
